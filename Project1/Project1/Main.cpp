@@ -1,11 +1,9 @@
-#include <stdio.h>
-void plus10();
-void print();
-int sum = 0;
+#include "Main.h"
+
 
 void main()
 {
-	int i = 0;
+	int i = 0,sum=0;
 
 	while (1)
 	{
@@ -15,27 +13,27 @@ void main()
 		
 		if (i == 1)
 		{
-			plus10();
+			plus10(&sum);
 
 		}
 		else if (i == 2)
 		{
-			print();
+			print(sum);
 		}
 		else {
 			printf("프로그램이 종료 되었습니다\n");
 			break;
 		}
-	}
+	} // while
 		fgetc(stdin);
 }
 
-void plus10() {
-	sum += 10;
+void plus10(int *sum) {
+	*sum += 10;
 	printf("10이 더해졌습니다.\n");
 }
 
-void print() {
+void print(int sum) {
 	printf("현재값 = %d\n", sum);
 }
 
